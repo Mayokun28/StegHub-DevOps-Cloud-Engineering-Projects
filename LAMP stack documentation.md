@@ -7,7 +7,7 @@ The LAMP stack is a popular open-source web development platform that consists o
 ## Step 0: Prerequisites
 1. EC2 Instance of t2.micro type and Ubuntu 24.04 LTS (HVM) was launched in the us-east-1 region using the AWS console.
 
-   ![EC2](../LAMP_STACK/Pictures/EC2instancesummary.JPG)
+   ![EC2](./LAMP_STACK/Pictures/EC2instancesummary.JPG)
 
 2. Created SSH key pair named *LAMP stack key* to access the instance on port 22
 

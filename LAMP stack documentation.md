@@ -41,7 +41,7 @@ The LAMP stack is a popular open-source web development platform that consists o
     sudo apt update
     sudo apt upgrade -y
     ```
-   ![alt text](<Sudo Apt Update.JPG>)
+   ![Apache](LAMP_STACK/Pictures/SudoAptUpdate.JPG)
 
 2. Run apache2 package installation
 

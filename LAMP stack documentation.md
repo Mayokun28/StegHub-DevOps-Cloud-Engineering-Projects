@@ -295,7 +295,7 @@ With the default DirectoryIndex setting on Apache, *index.html* file will always
     phpinfo();
     ```
 
-    ![PHP Test script](LAMP_STACK/Pictures/php new.JPG>)
+    ![PHP Test script](LAMP_STACK/Pictures/phpnew.JPG)
 
 4. Now refresh the page.
 
@@ -303,7 +303,7 @@ With the default DirectoryIndex setting on Apache, *index.html* file will always
     http://3.94.122.28/
     ```
 
-    ![alt text](<PHP page.JPG>)
+    ![Refresh Page](LAMP_STACK/Pictures/PHPpage.JPG)
 
 This page provides information about the server from the perspective of PHP. It is useful for debugging and to ensure the settings are being applied correctly.
 

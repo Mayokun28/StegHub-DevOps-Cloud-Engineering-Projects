@@ -48,7 +48,7 @@ The LAMP stack is a popular open-source web development platform that consists o
     ```
     sudo apt install apache2 -y
     ```
-    ![alt text](<Sudo Apt Install.JPG>)
+    ![Apache 2](LAMP_STACK/Pictures/SudoAptInstall.JPG)
 
 3. Enable and verify that apache is running as a service on the OS.
     ```
@@ -58,7 +58,7 @@ The LAMP stack is a popular open-source web development platform that consists o
 
     If it green and running, then apache2 is correctly installed.
 
-    ![alt text](<Sudo systemctl enable-2.JPG>)
+    ![Apache 3](LAMP_STACK/Pictures/Sudosystemctlenable-2.JPG)
 
 4. The server is running and can be accessed locally in the ubuntu shell by running the command below:
 

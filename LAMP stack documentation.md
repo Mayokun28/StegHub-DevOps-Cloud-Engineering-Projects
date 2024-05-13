@@ -21,7 +21,7 @@ The LAMP stack is a popular open-source web development platform that consists o
 
 4. Let's connect to our instance using SSH, then change the directory using the command `cd` into the folder where the private-key was downloaded. Permission was changed for the private key file using `chmod` and then I connected to the instance by `ssh` into it.
 
-   ![alt text](<Connect to an instance.JPG>)
+   ![SSH](LAMP_STACK/Pictures/Connecttoaninstance.JPG)
 
     ```
     cd Downloads

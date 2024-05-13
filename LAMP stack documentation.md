@@ -58,7 +58,7 @@ The LAMP stack is a popular open-source web development platform that consists o
 
     If it green and running, then apache2 is correctly installed.
 
-    ![Apache 3](LAMP_STACK/Pictures/Sudosystemctlenable-2.JPG)
+    ![Apache Running](LAMP_STACK/Pictures/Sudosystemctlenable.JPG)
 
 4. The server is running and can be accessed locally in the ubuntu shell by running the command below:
 

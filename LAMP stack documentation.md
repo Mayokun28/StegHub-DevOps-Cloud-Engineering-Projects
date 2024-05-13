@@ -32,7 +32,7 @@ The LAMP stack is a popular open-source web development platform that consists o
     ```
 
 
-   ![alt text](<Ubuntu SSH.JPG>)
+   ![New SSH](LAMP_STACK/Pictures/UbuntuSSH.JPG)
 
 ## Step 1 - Install Apache and Update the Firewall
 

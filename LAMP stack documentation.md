@@ -17,7 +17,7 @@ The LAMP stack is a popular open-source web development platform that consists o
 - Allow traffic on port 443 (HTTPS) with source from anywhere on the internet.
 - Allow traffic on port 22 (SSH) with source from any IP address. This is opened by default.
 
-  ![alt text](<Inbound Rules for security group.JPG>)
+  ![Security grp](/LAMP_STACK/Pictures/InboundRulesforsecuritygroup.JPG)
 
 4. Let's connect to our instance using SSH, then change the directory using the command `cd` into the folder where the private-key was downloaded. Permission was changed for the private key file using `chmod` and then I connected to the instance by `ssh` into it.
 

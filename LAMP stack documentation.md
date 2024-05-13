@@ -67,14 +67,14 @@ The LAMP stack is a popular open-source web development platform that consists o
         curl http://3.94.122.28:80
          
         
-    ![alt text](image.png)
+    ![Local Host](LAMP_STACK/Pictures/image.png)
 
 5. Test with the public IP address if the Apache HTTP server can respond to request from the internet using the url on a browser.
     ```
      http://3.94.122.28
      ```
 
-    ![alt text](<Ubuntu Apache page-1.JPG>)
+    ![Public IP](LAMP_STACK/Pictures/UbuntuApachepage.JPG)
 
 This shows that the web server is correctly installed and it is accessible directly from the internet.
 
@@ -90,7 +90,7 @@ This shows that the web server is correctly installed and it is accessible direc
 
     
     
-    ![alt text](<Mysql installed.JPG>)
+    ![MySQL](LAMP_STACK/Pictures/Mysqlinstalled.JPG)
 
 
 2. Enable and verify that mysql is running with the commands below:
@@ -98,7 +98,7 @@ This shows that the web server is correctly installed and it is accessible direc
     sudo systemctl enable --now mysql
     sudo systemctl status mysql 
     ```
-    ![alt text](<Mysql running.JPG>)
+    ![Enable MYSQL](LAMP_STACK/Pictures/Mysqlrunning.JPG)
 
 3. Log in to mysql console
 
@@ -118,13 +118,13 @@ This shows that the web server is correctly installed and it is accessible direc
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Mayor123$';
     ``` 
 
-    ![alt text](<Sudo Mysql-2.JPG>)
+    ![Root User](LAMP_STACK/Pictures/SudoMysql.JPG)
 
 5. Exit the MySQL shell with:
     ```
     exit
     ```
-    ![alt text](<exit mysql.JPG>)
+    ![ExitMySQL](LAMP_STACK/Pictures/exitmysql.JPG)
 
 ## Step 3 - Install PHP
 
@@ -140,7 +140,7 @@ This shows that the web server is correctly installed and it is accessible direc
      sudo apt install php libapache2-mod-php php-mysql
      ```
 
-    ![alt text](<Install PHP.JPG>)
+    ![PHP installed](LAMP_STACK/Pictures/InstallPHP.JPG)
 
     Confirm the PHP version.
 
@@ -148,7 +148,7 @@ This shows that the web server is correctly installed and it is accessible direc
     php -v
     ```
 
-    ![alt text](<PHP version.JPG>)
+    ![PHP Version](LAMP_STACK/Pictures/PHPversion.JPG)
 
     At this point, the LAMP stack is completely installed and fully operational.
 
@@ -165,7 +165,7 @@ This shows that the web server is correctly installed and it is accessible direc
     ```
     Assign the directory ownership with $USER environment variable which references the current system user.
 
-    ![alt text](<SUDO LATEST.JPG>)
+    ![Virtual Host](LAMP_STACK/Pictures/SUDOLATEST.JPG)
 
 2. Create and open a new configuration file in apache’s “sites-available” directory using vim.
 
@@ -185,7 +185,7 @@ This shows that the web server is correctly installed and it is accessible direc
     </VirtualHost>
     ```
     
-    ![alt text](<Virtual Host - old.JPG>)
+    ![Virtual Host](LAMP_STACK/Pictures/VirtualHost-old.JPG)
 
 3. Show the new file in sites-available
 
@@ -196,7 +196,7 @@ This shows that the web server is correctly installed and it is accessible direc
     000-default.conf default-ssl.conf projectlamp.conf
     ```
 
-    ![alt text](<default project lamp.JPG>)
+    ![PHP Output](LAMP_STACK/Pictures/defaultprojectlamp.JPG)
 
     With the VirtualHost configuration, Apache will serve projectlamp using /var/www/projectlamp as its web root directory.
 
@@ -206,7 +206,7 @@ This shows that the web server is correctly installed and it is accessible direc
     sudo a2ensite projectlamp
     ```
 
-    ![alt text](<enable virtual host-1.JPG>)
+    ![Enable Virtual Host](LAMP_STACK/Pictures/enablevirtualhost.JPG)
 
 5. Disable apache’s default website.
 
@@ -216,7 +216,7 @@ This shows that the web server is correctly installed and it is accessible direc
     sudo a2dissite 000-default
     ```
 
-    ![alt text](<Disable virtual host-1.JPG>)
+    ![Default Disable](LAMP_STACK/Pictures/Disablevirtualhost.JPG)
     
 6. Ensure the configuration does not contain syntax error.
     
@@ -226,7 +226,7 @@ This shows that the web server is correctly installed and it is accessible direc
     sudo apache2ctl configtest
     ```
 
-    ![alt text](<Syntax Error.JPG>)
+    ![Syntax Error](LAMP_STACK/Pictures/SyntaxError.JPG)
 
 7. Reload apache for changes to take effect.
 
@@ -234,7 +234,7 @@ This shows that the web server is correctly installed and it is accessible direc
     sudo systemctl reload apache2
     ```
 
-    ![alt text](<Reload Apache.JPG>)
+    ![Reload APache](LAMP_STACK/Pictures/ReloadApache.JPG)
 
 8. The new website is now active but the web root **/var/www/projectlamp** is still empty. Create an index.html file in this location so to test the virtual host work as expected.
 
@@ -248,7 +248,7 @@ This shows that the web server is correctly installed and it is accessible direc
     http://3.94.122.28:80
     ```
 
-    ![alt text](<Hello Lamp.JPG>)
+    ![Website](LAMP_STACK/Pictures/HelloLamp.JPG)
 
 ## Step 5 - Enable PHP on the website
 
@@ -268,7 +268,7 @@ With the default DirectoryIndex setting on Apache, *index.html* file will always
     </IfModule>
     ```
 
-    ![alt text](<change index file.JPG>)
+    ![Enable PHP](LAMP_STACK/Pictures/changeindexfile.JPG)
 
 2. Reload Apache
 
@@ -278,7 +278,7 @@ With the default DirectoryIndex setting on Apache, *index.html* file will always
     sudo systemctl reload apache2
     ```
 
-    ![alt text](<Apache reloaded.JPG>)
+    ![Reload Apache](LAMP_STACK/Pictures/Apachereloaded.JPG)
 
 3. Create a php test script to confirm that Apache is able to handle and process requests for PHP files.
 
@@ -295,7 +295,7 @@ With the default DirectoryIndex setting on Apache, *index.html* file will always
     phpinfo();
     ```
 
-    ![alt text](<php new.JPG>)
+    ![PHP Test script](LAMP_STACK/Pictures/php new.JPG>)
 
 4. Now refresh the page.
 

@@ -254,7 +254,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
     ```
 
-    ![alt text](23.JPG)
+    ![Nginx](/LEMP-STACK/Images/23.JPG)
 
     This will tell Nginx to use this configuration when next it is reloaded.
 
@@ -264,7 +264,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo nginx -t
     ```
 
-    ![alt text](24.JPG)
+    ![Nginx3](/LEMP-STACK/Images/24.JPG)
 
     If any errors are reported, go back to your configuration file to review its contents before continuing.
 
@@ -274,14 +274,14 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo unlink /etc/nginx/sites-enabled/default
     ```
      
-    ![alt text](25.JPG)
+    ![Host](/LEMP-STACK/Images/25.JPG)
 
 7. Reload Nginx to apply the changes.
 
     ```
     sudo systemctl reload nginx
     ```
-    ![alt text](26.JPG)
+    ![Changes](/LEMP-STACK/Images/26.JPG)
 
 8. The new website is now active but the web root /var/www/projectLEMP is still empty. Create an index.html file in this location so to test the virtual host (server block) works as expected.
 
@@ -289,14 +289,14 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo echo ‘Hello LEMP from hostname’ $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) ‘with public IP’ $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
     ```
 
-    ![alt text](27.JPG)
+    ![website](/LEMP-STACK/Images/27.JPG)
 
 9. Now go to your browser and type your server’s domain name or IP address to open the website.
 
     ```
     http://3.80.95.227
     ```
-    ![alt text](28.JPG)
+    ![domain](/LEMP-STACK/Images/28.JPG)
 
     This file can be left in place as a temporary landing page for the application until an index.php file is set up to replace it. Once this is done, remove or rename the *index.html* file from the document root as it will take precedence over *index.php* file by default.
 
@@ -322,14 +322,14 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     <?php
     phpinfo();
     ```
-    ![alt text](29.JPG)
+    ![Server](/LEMP-STACK/Images/29.JPG)
 
 2. You can now access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
 
     ```
     http://3.80.95.227/info.php
     ```
-   ![alt text](30.JPG) 
+   ![IP address](/LEMP-STACK/Images/30.JPG) 
 
     After checking the relevant information about the server through this page, It’s best to remove the file created as it contains sensitive information about the PHP environment and the ubuntu server. It can always be recreated if the information is needed later.
 
@@ -338,7 +338,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     ```
     sudo rm /var/www/projectLEMP/info.php
     ```
-    ![alt text](31.JPG)
+    ![LEMP](/LEMP-STACK/Images/31.JPG)
 
 # Step 6 - Retrieve Data from MySQL database with PHP
 
@@ -347,7 +347,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     ```
     sudo mysql -p
     ```
-    ![alt text](32.JPG)
+    ![Console](/LEMP-STACK/Images/32.JPG)
 
 2. Create a new database by running the following command from your MySQL console:
 
@@ -355,7 +355,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     mysql> CREATE DATABASE favoriteclub_database;
     ```
 
-    ![alt text](image-3.png)
+    ![console](/LEMP-STACK/Images/33.png)
 
 3. Create a new user and grant the user full privileges on the new database created.
 
@@ -364,7 +364,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
 
     mysql> GRANT ALL ON favoriteclub_database.* TO 'mayor'@'%';
     ```
-    ![alt text](34.JPG)
+    ![database](/LEMP-STACK/Images/34.JPG)
 
 4. Now exit the MySQL shell with:
 
@@ -375,7 +375,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     ```
     mysql -u mayor -p
     ```
-    ![alt text](35.JPG)
+    ![user](/LEMP-STACK/Images/35.JPG)
 
 6. Confirm that you have access to the **favoriteclub_database**:
 
@@ -383,7 +383,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     mysql> show databases;
     ```
 
-    ![alt text](36.JPG)
+    ![favorite](/LEMP-STACK/Images/36.JPG)
 
 7. Create a test table named todo_list. From the MySQL console, run the following statement:
 
@@ -395,7 +395,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
      );
     ```
 
-    ![alt text](37.JPG)
+    ![varchar](/LEMP-STACK/Images/37.JPG)
 
 8. Insert a few rows of content in the test table. You might want to repeat the next command a few times, using different values:
     ```
@@ -405,14 +405,14 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     mysql> INSERT INTO favoriteclub_database.todo_list (content) VALUES ("and this one more thing");
     ```
 
-    ![alt text](38.JPG)
+    ![important](/LEMP-STACK/Images/38.JPG)
 
 9. To confirm that the data was successfully saved to your table, run:
 
     ```
     SELECT * FROM favoriteclub_database.todo_list;
     ```
-    ![alt text](39.JPG)
+    ![alt text](/LEMP-STACK/Images/39.JPG)
 
 10. After confirming that you have valid data in your test table, you can exit the MySQL console:
 
@@ -448,7 +448,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     } 
     ```
 
-    ![alt text](image-4.png)
+    ![echo](/LEMP-STACK/Images/40.png)
 
     Save and close the file when you’re done editing.
 
@@ -458,7 +458,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     http://3.80.95.227/todo_list.php
     ```
 
-    ![alt text](image-5.png)
+    ![ToDo](/LEMP-STACK/Images/41.png)
 
     That means your PHP environment is ready to connect and interact with your MySQL server.
 

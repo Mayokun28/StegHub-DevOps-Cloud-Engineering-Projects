@@ -117,7 +117,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo mysql
     ```
 
-    ![MySQL](/LEMP-STACK/Images/15.png)
+    ![MySQL](/LEMP-STACK/Images/15.JPG)
 
     This connects to the MySQL server as the administrative database user root infered by the use of sudo when running the command.
 
@@ -355,7 +355,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     mysql> CREATE DATABASE favoriteclub_database;
     ```
 
-    ![console](/LEMP-STACK/Images/33.png)
+    ![console](/LEMP-STACK/Images/33.JPG)
 
 3. Create a new user and grant the user full privileges on the new database created.
 
@@ -448,7 +448,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     } 
     ```
 
-    ![echo](/LEMP-STACK/Images/40.png)
+    ![echo](/LEMP-STACK/Images/40.JPG)
 
     Save and close the file when you’re done editing.
 
@@ -458,7 +458,7 @@ Test the LEMP stack to validate that Nginx can handle the .php files off to the 
     http://3.80.95.227/todo_list.php
     ```
 
-    ![ToDo](/LEMP-STACK/Images/41.png)
+    ![ToDo](/LEMP-STACK/Images/41.JPG)
 
     That means your PHP environment is ready to connect and interact with your MySQL server.
 

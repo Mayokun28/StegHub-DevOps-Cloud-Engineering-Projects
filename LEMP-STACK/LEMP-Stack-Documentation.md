@@ -7,9 +7,9 @@ The LEMP stack is a popular open-source web development platform that consists o
 # Step 0: Prerequisites
 
 1. EC2 Instance of t2.micro type and Ubuntu 24.04 LTS (HVM) was launched in the us-east-1 region using the AWS console.
-   ![alt text](1.JPG)
+   ![ec2](/LEMP-STACK/Images/1.JPG)
 
-   ![alt text](2.JPG)
+   ![ec2](/LEMP-STACK/Images/2.JPG)
 
 2. The security group was configured with the following inbound rules:
 
@@ -17,11 +17,11 @@ The LEMP stack is a popular open-source web development platform that consists o
 - Allow traffic on port 443 (HTTPS) with source from anywhere on the internet.
 - Allow traffic on port 22 (SSH) with source from any IP address. This is opened by default.
 
-    ![alt text](3.JPG)
+    ![securitygrp](/LEMP-STACK/Images/3.JPG)
 
     Let's Connect our instance using SSH. This is done by using the command `cd` into the folder where the private-key was downloaded, permission was changed for the private key file using `chmod 400` then finally `ssh` into it by running the following command:
 
-    ![alt text](4.JPG)
+    ![SSH](/LEMP-STACK/Images/4.JPG)
 
     ```
     cd Downloads
@@ -30,7 +30,7 @@ The LEMP stack is a popular open-source web development platform that consists o
 
     ssh -i "my-lemp-key.pem" ubuntu@3.80.95.227
     ```
-    ![alt text](5.JPG)
+    ![SecGrp](/LEMP-STACK/Images/5.JPG)
 
 # Step 1 - Install Nginx Web Server
 
@@ -40,7 +40,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo apt update
     sudo apt upgrade -y
     ```
-    ![alt text](6.JPG)
+    ![Nginx](/LEMP-STACK/Images/6.JPG)
 
 2. Install Nginx
 
@@ -48,7 +48,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo apt install nginx
     ```
 
-    ![alt text](7.JPG)
+    ![Nginx](/LEMP-STACK/Images/7.JPG)
 
 3. Verify that Nginx is active and running as a service on Ubuntu OS.
 
@@ -57,7 +57,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     ```
     If it's green and running, then Nginx is correctly installed.
 
-    ![alt text](8.JPG)
+    ![verify](/LEMP-STACK/Images/8.JPG)
 
 4. The Nginx server is running and can be accessed locally in the Ubuntu shell by running the command below:
 
@@ -67,14 +67,14 @@ The LEMP stack is a popular open-source web development platform that consists o
     curl http://127.0.0.1:80
     ```
 
-    ![alt text](9.JPG)
+    ![Server](/LEMP-STACK/Images/9.JPG)
 
 5. Test with the public IP address if the Nginx server can respond to request from the internet using the url on a browser.
 
     ```
     http://3.80.95.227:80
     ```
-    ![alt text](10.JPG)
+    ![IP address](/LEMP-STACK/Images/10.JPG)
 
     This shows that the Nginx web server is correctly installed and it is accessible through the firewall.
 
@@ -85,7 +85,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     ```
     The above command, gave an error 401 - Unauthorized.
 
-    ![alt text](11.JPG)
+    ![PublicIP](/LEMP-STACK/Images/11.JPG)
 
     The error "401 - unauthorized" was troubleshooted by making the following navigations from the ec2 instance page on the AWS console:
 
@@ -93,11 +93,11 @@ The LEMP stack is a popular open-source web development platform that consists o
 
     - Then change the IMDSv2 from Required to Optional.
 
-    ![alt text](12.JPG)
+    ![Error](/LEMP-STACK/Images/12.JPG)
 
     The command was run again, this time there was no error and the public IP address displayed correctly.
 
-    ![alt text](13.JPG)
+    ![run](/LEMP-STACK/Images/13.JPG)
 
 # Step 2 - Install MySQL
 
@@ -109,7 +109,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo apt install mysql-server
     ```
 
-    ![alt text](14.JPG)
+    ![RDB](/LEMP-STACK/Images/14.JPG)
 
 2. Log in to mysql console
 
@@ -117,7 +117,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo mysql
     ```
 
-    ![alt text](image-2.png)
+    ![MySQL](/LEMP-STACK/Images/15.png)
 
     This connects to the MySQL server as the administrative database user root infered by the use of sudo when running the command.
 
@@ -129,7 +129,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Mayor123$';
     ```
 
-    ![alt text](16.JPG)
+    ![Rootuser](/LEMP-STACK/Images/16.JPG)
 
     Exit the MySQL shell.
 
@@ -144,7 +144,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo mysql_secure_installation
     ```
 
-    ![alt text](17.JPG)
+    ![sudo](/LEMP-STACK/Images/17.JPG)
 
 5. After changing root user password, log in to MySQL console.
 
@@ -154,7 +154,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     sudo mysql -p
     ```
 
-    ![alt text](18.JPG)
+    ![change](/LEMP-STACK/Images/18.JPG)
 
     Exit MySQL shell.
 
@@ -179,7 +179,7 @@ The LEMP stack is a popular open-source web development platform that consists o
     ```
 
 
-    ![alt text](19.JPG)
+    ![php](/LEMP-STACK/Images/19.JPG)
 
 # Step 4 - Configure Nginx to use PHP processor
 
@@ -188,14 +188,14 @@ The LEMP stack is a popular open-source web development platform that consists o
     ```
     sudo mkdir /var/www/projectLEMP
     ```
-    ![alt text](20.JPG)
+    ![Nginx](/LEMP-STACK/Images/20.JPG)
 
 2. Assign the directory ownership with $USER which will reference the current system user.
 
     ```
     sudo chown -R $USER:$USER /var/www/projectLEMP
     ```
-    ![alt text](21.JPG)
+    ![Sudo](/LEMP-STACK/Images/21.JPG)
 
 3.  Create a new configuration file in Nginx’s “sites-available” directory using nano.
 
@@ -228,7 +228,7 @@ The LEMP stack is a popular open-source web development platform that consists o
       }
       ```
 
-    ![alt text](22.JPG)
+    ![Nginx](/LEMP-STACK/Images/22.JPG)
 
     Here’s what each directives and location blocks does:
     

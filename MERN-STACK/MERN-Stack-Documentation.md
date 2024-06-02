@@ -10,8 +10,7 @@ React.js: A powerful library for creating interactive user interfaces.
 
 Node.js: A JavaScript runtime environment that allows execution of server-side JavaScript code.
 
-This guide provides a comprehensive overview of setting up and utilizing each component of the MERN stack, to develop robust web applications. Particularly, we will build a to-do application that uses a RESTful API on an Ubuntu 24.04 server 
-using EC2.
+This guide provides a comprehensive overview of setting up and utilizing each component of the MERN stack, to develop robust web applications instance.
 
 Workflow of MERN Stack
 1. Client Requests: The process begins with the client sending a request to the server, typically through a web interface created with React.js.
@@ -30,7 +29,7 @@ Response Generation: The server may perform additional processing based on the d
 
 - Performance: While both instances offer burstable performance, the t3.small typically provides better baseline performance compared to the t2.micro. This might be necessary for applications that require a bit more processing power.
 
-    ![alt text](1.JPG)
+    ![performance](./MERN-STACK/Images/1.JPG)
 
     ![alt text](2.JPG)
 

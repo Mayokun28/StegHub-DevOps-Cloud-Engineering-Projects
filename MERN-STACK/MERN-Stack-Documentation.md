@@ -43,7 +43,7 @@ Response Generation: The server may perform additional processing based on the d
 
 - Allow traffic on port 5000 (Custom TCP) with source from any IP address.
 
-    ![alt text](3.JPG)
+    ![Traffic](/MERN-STACK/Images/3.JPG)
 
 
 3. Let's connect to our instance using SS. First, we will `cd` into the folder where the private-key was downloaded. Then ssh to the instance by running:
@@ -56,7 +56,7 @@ Response Generation: The server may perform additional processing based on the d
     ssh -i "mern-key.pem" ubuntu@50.17.88.9
     ```
 
-    ![alt text](image.png)
+    ![alt text](/MERN-STACK/Images/4.png)
 
 # Step 1 - Backend Configuration
 
@@ -65,21 +65,21 @@ Response Generation: The server may perform additional processing based on the d
     sudo apt update
     sudo apt upgrade -y
     ```
-    ![alt text](image-1.png)
+    ![ackend](/MERN-STACK/Images/5.png)
 
 2. Get the location of Node.js software from ubuntu repositories.
 
     ```
     curl fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     ```
-    ![alt text](6.JPG)
+    ![Nodejs](/MERN-STACK/Images/6.JPG)
 
 3. Install node.js on the server with the command below.
 
     ```
     sudo apt-get install -y nodejs
     ```
-    ![alt text](7.JPG)
+    ![Server](/MERN-STACK/Images/7.JPG)
 
     Note: the above command installs both node.js and npm. NPM is a package manager for Node just as apt is a package manager for Ubuntu. It is used to install Node modules and packages and to manage dependency conflicts.
 
@@ -90,7 +90,7 @@ Response Generation: The server may perform additional processing based on the d
     npm -v        // Gives the node package manager version
     ```
 
-    ![alt text](8.JPG)
+    ![Node](/MERN-STACK/Images/8.JPG)
 
 ## Application Code Setup   
 
@@ -99,11 +99,11 @@ Response Generation: The server may perform additional processing based on the d
         mkdir Todo
         cd Todo
     ```
-    ![alt text](9.JPG)
+    ![alt text](/MERN-STACK/Images/9.JPG)
 
 2. Then initialize the project directory.
 
-    ![alt text](10.JPG)
+    ![alt text](/MERN-STACK/Images/10.JPG)
 
     This is to initialize the project directory and in the process, creates a new file called package.json.
     This file will contain information about your application and the dependencies it needs to run. Follow the prompts after running the command. You can press “Enter” several times to accept default values, then accept to write out the package.json file by typing yes.
@@ -116,7 +116,7 @@ Express is a framework for Node.js. It simplifies development and abstracts a lo
     ```
     npm install express
     ```
-    ![alt text](11.JPG)
+    ![alt text](/MERN-STACK/Images/11.JPG)
 
 2. Create a file index.js and run ls to confirm the file is successfully created.
 
@@ -124,14 +124,14 @@ Express is a framework for Node.js. It simplifies development and abstracts a lo
     touch index.js
     ls
     ```
-    ![alt text](12.JPG)
+    ![alt text](/MERN-STACK/Images/12.JPG)
 
 3. Install dotenv module
 
     ```
     npm install express
     ```
-    ![alt text](13.JPG)
+    ![alt text](/MERN-STACK/Images/13.JPG)
 
 4. Open index.js file
 
@@ -161,14 +161,14 @@ Express is a framework for Node.js. It simplifies development and abstracts a lo
     ```
     Note: Port 5000 have been specified to be used in the code. This was required later on the browser.
 
-    ![alt text](14.JPG)
+    ![alt text](/MERN-STACK/Images/14.JPG)
 
 5. Start the server to see if it works. Open your terminal in the same directory as your index.js file. Run
 
     ```
     node index.js
     ```
-    ![alt text](15.JPG)
+    ![alt text](/MERN-STACK/Images/15.JPG)
 
     Note: Ensure you have opened the port 5000 in your ec2 security group.
 
@@ -177,7 +177,7 @@ Express is a framework for Node.js. It simplifies development and abstracts a lo
     ```
    http://50.17.88.9:5000
    ```
-   ![alt text](16.JPG)
+   ![alt text](/MERN-STACK/Images/16.JPG)
 
 # Step 2 - Creating the Routes
 
@@ -196,7 +196,7 @@ For each task, routes were created which defined various endpoints that the ToDo
     ```
     $ mkdir routes && cd routes
     ```
-    ![alt text](17.JPG)
+    ![alt text](/MERN-STACK/Images/17.JPG)
 
 
 2. Create a file api.js and open the file then write the code below.
@@ -243,9 +243,9 @@ For each task, routes were created which defined various endpoints that the ToDo
         module.exports = router;
 
     ```
-    ![alt text](18.JPG)
+    ![alt text](/MERN-STACK/Images/18.JPG)
 
-    ![alt text](19.JPG)
+    ![alt text](/MERN-STACK/Images/19.JPG)
 
     
 # Models
@@ -261,16 +261,14 @@ In essence, the schema is a blueprint of how the database is constructed, includ
     cd ..
     npm install mongoose
     ```
-   ![alt text](19-2.JPG)
-
-    ![alt text](20.JPG)
+   ![alt text](/MERN-STACK/Images/20.JPG)
 
 2. Create a new folder models, schange directory to models folder, create a file todo.js inside models folder. Open the file todo.js and edit with vim editor.
 
     ```
     mkdir models && cd models && touch todo.js
     ```
-    ![alt text](21.JPG)
+    ![alt text](/MERN-STACK/Images/21.JPG)
 
     Past the code below into the file todo.js
 
@@ -292,7 +290,7 @@ In essence, the schema is a blueprint of how the database is constructed, includ
     module.exports = Todo;
    ```
 
-   ![alt text](22.JPG)
+   ![alt text](/MERN-STACK/Images/22.JPG)
 
 3. We need to update our routes in api.js to make use of the new model. In Routes directory, open api.js and delete the code inside with :%d. Paste the new code below into it:
 
@@ -340,17 +338,17 @@ mLab provides MongoDB database as a service solution (DBaaS). MongoDB has two cl
 
 2. Create a cluster, select AWS as the cloud provider and choose a region near you.
 
-    ![alt text](24.JPG)
+    ![alt text](/MERN-STACK/Images/24.JPG)
 
     AWS cloud provider, in region N. Virginia (us-east-1) was selected.
 
     Then your cluster is created.
 
-    ![alt text](25-1.JPG)
+    ![alt text](/MERN-STACK/Images/25-1.JPG)
 
 3. Access from anywhere to the MongoDB database was allowed (Not secure but it is ideal for testing).
 
-    ![alt text](25.JPG)
+    ![alt text](/MERN-STACK/Images/25.JPG)
 
 4. Create a database user and give it admin access. - Click on database access under the security section (left sidebar).
 - Click on “Add New Database User”
@@ -358,11 +356,11 @@ mLab provides MongoDB database as a service solution (DBaaS). MongoDB has two cl
 - Ensure the “Read and Write to any database” option is selected.
 - Click "Create Database User"
 
-    ![alt text](27.JPG)
+    ![alt text](/MERN-STACK/Images/27.JPG)
 
 5. A database named "todo_do" and collections named "todos" was created.
 
-    ![alt text](28.JPG)
+    ![alt text](/MERN-STACK/Images/28.JPG)
 
 
 
@@ -379,7 +377,7 @@ mLab provides MongoDB database as a service solution (DBaaS). MongoDB has two cl
     ```
     Make sure you use your own MongoDB URL from mLab after you created your database and user. Replace <USER> with the username and <PASSWORD> with the password of the user you created.
 
-    ![alt text](29.JPG)
+    ![alt text](/MERN-STACK/Images/29.JPG)
 
 
 7. Update index.js to reflect the use of .env so that Node.js can connect to the DB.
@@ -431,7 +429,7 @@ mLab provides MongoDB database as a service solution (DBaaS). MongoDB has two cl
     });
     ```
 
-    ![alt text](30-1.JPG)
+    ![alt text](/MERN-STACK/Images/30-1.JPG)
 
     Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.   
 
@@ -440,7 +438,7 @@ mLab provides MongoDB database as a service solution (DBaaS). MongoDB has two cl
     node index.js
     ```
 
-    ![alt text](32.JPG)
+    ![alt text](/MERN-STACK/Images/32.JPG)
 
 # Testing Backend Code without Frontend using RESTful API
 
@@ -454,23 +452,23 @@ Postman was used to test the backend code. The endpoints were tested.
       http://18.207.198.13:5000/api/todos
       ```  
 
-    ![alt text](34-1.JPG)
+    ![alt text](/MERN-STACK/Images/34.JPG)
 
     Create a POST request to the API
 
     This request creates a new record/task in our To-Do application.
 
-    ![alt text](35.JPG)
+    ![alt text](/MERN-STACK/Images/35.JPG)
 
     Make a GET request to the API
 
     This request retrieves all existing records/tasks from our To-Do application.
 
-    ![alt text](36-1.JPG)
+    ![alt text](/MERN-STACK/Images/36.JPG)
 
     Check Database Collections
 
-    ![alt text](37.JPG)
+    ![alt text](/MERN-STACK/Images/37.JPG)
 
 # Step 2 - Frontend Creation
 
@@ -482,7 +480,7 @@ It is time to create a user interface for a Web client (browser) to interact wit
     npx create-react-app client
     ```
 
-    ![alt text](34.JPG)
+    ![alt text](/MERN-STACK/Images/38.JPG)
 
 This created a new folder in the Todo directory called client, where all the react code was added.
 
@@ -496,14 +494,14 @@ Before testing the react app, the following dependencies needs to be installed i
     npm install concurrently --save-dev
     ```
 
-    ![alt text](39.JPG)
+    ![alt text](/MERN-STACK/Images/39.JPG)
 
 - Install nodemon. It is used to run and monitor the server. If there is any change in the server code, nodemon will restart it automatically and load the new changes.
 
     ```
     npm install nodemon --save-dev
     ```
-    ![alt text](40.JPG)
+    ![alt text](/MERN-STACK/Images/40.JPG)
 
 - In the Todo folder open the package.json file using the vim editor, change the highlighted part of the below screenshot and replace with the code below:
 
@@ -514,7 +512,7 @@ Before testing the react app, the following dependencies needs to be installed i
     "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
     }
     ```
-   ![alt text](41.JPG)
+   ![alt text](/MERN-STACK/Images/41.JPG)
 
 Configure Proxy In package.json
 
@@ -528,7 +526,7 @@ Configure Proxy In package.json
     ```
     vim package.json
     ```
-    ![alt text](42.JPG)
+    ![alt text](/MERN-STACK/Images//MERN-STACK/Images/42.JPG)
 
 3. Add the key value pair in the package.json file
 
@@ -536,7 +534,7 @@ Configure Proxy In package.json
     “proxy”: “http://localhost:5000”
     ```
 
-    ![alt text](43.JPG)
+    ![alt text](/MERN-STACK/Images/43.JPG)
 
 The whole purpose of adding the proxy configuration above is to make it possible to access the application directly from the browser by simply calling the server url like http://locathost:5000 rather than always including the entire path like http://localhost:5000/api/todos.
 
@@ -546,13 +544,13 @@ Ensure you are inside the Todo directory, and simply do:
     npm run dev
 ```
 
-![alt text](44.JPG)
+![alt text](/MERN-STACK/Images/44.JPG)
 
 The app opened and started running on localhost:3000
 
 Note: In order to access the application from the internet, TCP port 3000 had been opened on EC2 security group.
 
-![alt text](45.JPG)
+![alt text](/MERN-STACK/Images/45.JPG)
 
 
 ## Creating React Components
@@ -581,7 +579,7 @@ One of the advantages of react is that it makes use of components, which are reu
     cd components
     ```
 
-    ![alt text](46.JPG)
+    ![alt text](/MERN-STACK/Images/46.JPG)
 
     Open Input.js file
 
@@ -633,7 +631,7 @@ One of the advantages of react is that it makes use of components, which are reu
     export default Input;
     ```
 
-    ![alt text](47.JPG)
+    ![alt text](/MERN-STACK/Images/47.JPG)
 
     To make use of axios, which is a Promise-based HTTP client for the browser and Node.js, you will need to navigate to your client directory from your terminal:
 
@@ -648,7 +646,7 @@ One of the advantages of react is that it makes use of components, which are reu
     npm install axios
     ```
 
-    ![alt text](48.JPG)
+    ![alt text](/MERN-STACK/Images/48.JPG)
 
     Go to components directory
 
@@ -690,7 +688,7 @@ One of the advantages of react is that it makes use of components, which are reu
     export default ListTodo;
     ```
 
-    ![alt text](49.JPG)
+    ![alt text](/MERN-STACK/Images/49.JPG)
 
     Then open the Todo.js file with the vim text editor, 
 
@@ -753,7 +751,7 @@ One of the advantages of react is that it makes use of components, which are reu
         export default Todo;
     ```
 
-    ![alt text](50.JPG)
+    ![alt text](/MERN-STACK/Images/50.JPG)
 
     Adjust the React code by Deleting the logo and adjust App.js to look like this:
 
@@ -768,7 +766,7 @@ One of the advantages of react is that it makes use of components, which are reu
     vim App.js
     ```
 
-    ![alt text](51.JPG)
+    ![alt text](/MERN-STACK/Images/51.JPG)
 
     In the src directory, open the App.css with the vim text editor:
 
@@ -864,7 +862,7 @@ One of the advantages of react is that it makes use of components, which are reu
         }
     }
     ```
-    ![alt text](52.JPG)
+    ![alt text](/MERN-STACK/Images/52.JPG)
 
     In the src directory, open the index.css using the vim text editor.
 
@@ -872,7 +870,7 @@ One of the advantages of react is that it makes use of components, which are reu
     vim index.css
     ```
 
-   ![alt text](53-1.JPG)
+   ![alt text](/MERN-STACK/Images/53.JPG)
 
     copy and paste the code below into index.css file;
 
@@ -893,7 +891,7 @@ One of the advantages of react is that it makes use of components, which are reu
         }
     ```
 
-    ![alt text](54-1.JPG)
+    ![alt text](/MERN-STACK/Images/54.JPG)
 
     Go to the Todo directory.
 
@@ -906,7 +904,7 @@ One of the advantages of react is that it makes use of components, which are reu
     ```
     npm run dev
     ```
-    ![alt text](55.JPG)
+    ![alt text](/MERN-STACK/Images/55.JPG)
 
     At this point, the To-Do app is ready and fully functional with the functionality discussed earlier: Creating a task, deleting a task, and viewing all the tasks.
 
@@ -914,11 +912,11 @@ One of the advantages of react is that it makes use of components, which are reu
 
     http://publicIP:3000
 
-    ![alt text](56.JPG)
+    ![alt text](/MERN-STACK/Images/56.JPG)
 
     You can go ahead to add some todos via the user interface.
 
-    ![alt text](57-1.JPG)
+    ![alt text](/MERN-STACK/Images/57.JPG)
 
 ## Conclusion
 We just created a todo app using the MERN stack on the cloud server. We deployed a frontend application using React.js that communicates with a backend application written using Express.js. We aldo created a MongoDB backend for storing tasks in a database. Also we were able to perform API testing using Postman.

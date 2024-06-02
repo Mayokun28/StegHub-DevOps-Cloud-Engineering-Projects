@@ -29,9 +29,9 @@ Response Generation: The server may perform additional processing based on the d
 
 - Performance: While both instances offer burstable performance, the t3.small typically provides better baseline performance compared to the t2.micro. This might be necessary for applications that require a bit more processing power.
 
-    ![performance](./MERN-STACK/Images/1.JPG)
+    ![performance](/MERN-STACK/Images/1.JPG)
 
-    ![alt text](2.JPG)
+    ![Performance2](/MERN-STACK/Images/2.JPG)
 
 2. The security group was configured with the following inbound rules:
 

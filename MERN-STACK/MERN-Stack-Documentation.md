@@ -526,7 +526,7 @@ Configure Proxy In package.json
     ```
     vim package.json
     ```
-    ![alt text](/MERN-STACK/Images//MERN-STACK/Images/42.JPG)
+    ![alt text](/MERN-STACK/Images/42.JPG)
 
 3. Add the key value pair in the package.json file
 

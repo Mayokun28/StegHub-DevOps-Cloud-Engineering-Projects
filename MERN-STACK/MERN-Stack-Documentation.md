@@ -56,7 +56,7 @@ Response Generation: The server may perform additional processing based on the d
     ssh -i "mern-key.pem" ubuntu@50.17.88.9
     ```
 
-    ![alt text](/MERN-STACK/Images/4.png)
+    ![alt text](/MERN-STACK/Images/4.JPG)
 
 # Step 1 - Backend Configuration
 
@@ -65,7 +65,7 @@ Response Generation: The server may perform additional processing based on the d
     sudo apt update
     sudo apt upgrade -y
     ```
-    ![ackend](/MERN-STACK/Images/5.png)
+    ![ackend](/MERN-STACK/Images/5.JPG)
 
 2. Get the location of Node.js software from ubuntu repositories.
 

@@ -15,8 +15,7 @@ This guide provides a comprehensive overview of setting up and utilizing each co
 Workflow of MERN Stack
 1. Client Requests: The process begins with the client sending a request to the server, typically through a web interface created with React.js.
 2. Server Interaction: Express.js running on Node.js handles the incoming request. It can interact with the database to create, read, update, or delete data.
-3. Database Operations: MongoDB stores or retrieves data, which is then sent back to the server.
-Response Generation: The server may perform additional processing based on the data retrieved or manipulated in the database before sending a response back to the client.
+3. Database Operations: MongoDB stores or retrieves data, which is then sent back to the server. The server may perform additional processing based on the data retrieved or manipulated in the database before sending a response back to the client.
 4. Displaying Data: React.js then takes this data and updates the view for the user, without needing a full page refresh.
 
 # Step 0: Prerequisites

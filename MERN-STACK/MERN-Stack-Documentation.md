@@ -1,4 +1,4 @@
-# Deploying a Web Solution using MERN STACK ON EC2
+# Deploying a Web Solution using MERN STACK ON EC2 INSTANCE
 
 The MERN stack is a popular technology stack used for building dynamic and scalable web applications. MERN is an acronym that stands for MongoDB, Express.js, React.js, and Node.js. Each of these components provides a layer in the stack, handling everything from the database, server, and API layers to the frontend.  It leverages a combination of JavaScript technologies:
 

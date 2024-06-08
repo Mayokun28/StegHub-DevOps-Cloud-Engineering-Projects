@@ -15,9 +15,9 @@ The MEAN stack is a popular JavaScript stack used for building web applications.
 
 1. EC2 Instance of t2.micro type and Ubuntu 22.04 LTS (HVM) was launched in the us-east-1 region using the AWS console.
 
-    ![alt text](mean1.JPG)
+    ![alt text](/MEAN-STACK/Images/mean1.JPG)
 
-    ![alt text](mean2.JPG)
+    ![alt text](/MEAN-STACK/Images/mean2.JPG)
 
 2. The security group was configured with the following inbound rules:
 
@@ -27,7 +27,7 @@ The MEAN stack is a popular JavaScript stack used for building web applications.
 - Allow traffic on port 5000 with source from any IP address.
 - Allow traffic on port 3000 with source from any IP address.
 
-    ![alt text](mean3.JPG)
+    ![alt text](/MEAN-STACK/Images/mean3.JPG)
 
 3. Let's connect our instance using SSH. First, we have to cd into the folder where the private-key was downloaded (downloads). The private ssh key permission was changed for the private key file and then used to connect to the instance by running:
 

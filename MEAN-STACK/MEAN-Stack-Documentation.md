@@ -39,7 +39,7 @@ The MEAN stack is a popular JavaScript stack used for building web applications.
     ssh -i "MEAN-KEY.pem" ubuntu@54.237.134.94
     ```
 
-    ![alt text](mean4.JPG)
+    ![alt text](/MEAN-STACK/Images/mean4.JPG)
 
 ## Step 1 - Install Nodejs 
 
@@ -51,7 +51,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     sudo apt upgrade -y
     ```
 
-    ![alt text](mean5.JPG)
+    ![alt text](/MEAN-STACK/Images/mean5.JPG)
 
 2. Add certificates.
 
@@ -59,12 +59,12 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
     ```
 
-    ![alt text](mean6.JPG)
+    ![alt text](/MEAN-STACK/Images/mean6.JPG)
 
     ```
     curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     ```
-    ![alt text](mean7.JPG)
+    ![alt text](/MEAN-STACK/Images/mean7.JPG)
 
 
 3. Install NodeJS
@@ -73,7 +73,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     sudo apt-get install -y nodejs
     ```
 
-    ![alt text](mean8.JPG)
+    ![alt text](/MEAN-STACK/Images/mean8.JPG)
 
 
 ## Step 2 - Install MongoDB
@@ -92,7 +92,7 @@ For this application, Book records were added to MongoDB that contain book name,
     echo "deb [ signed-by=/usr/share/keyrings/mongodb-archive-keyring.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
     ```
 
-    ![alt text](mean9.JPG)
+    ![alt text](/MEAN-STACK/Images/mean9.JPG)
 
     
 3. Update the package database and install MongoDB.
@@ -100,13 +100,13 @@ For this application, Book records were added to MongoDB that contain book name,
     ```
    sudo apt-get update
    ``` 
-    ![alt text](mean10.JPG)
+    ![alt text](/MEAN-STACK/Images/mean10.JPG)
 
     ```
     sudo apt-get install -y mongodb-org
     ```
 
-    ![alt text](mean11.JPG)
+    ![alt text](/MEAN-STACK/Images/mean11.JPG)
 
 4.  Start and enable MongoDB. Also, verify that the service is up and running.
 
@@ -120,7 +120,7 @@ For this application, Book records were added to MongoDB that contain book name,
     sudo systemctl status mongod
     ```
 
-    ![alt text](mean12.JPG)
+    ![alt text](/MEAN-STACK/Images/mean12.JPG)
 
 5. Install body-parser package.
 
@@ -129,7 +129,7 @@ For this application, Book records were added to MongoDB that contain book name,
     ```
     sudo npm install body-parser
     ```
-    ![alt text](mean13.JPG)
+    ![alt text](/MEAN-STACK/Images/mean13.JPG)
 
 6. Create the project root folder named ‘Books’
 
@@ -142,7 +142,7 @@ For this application, Book records were added to MongoDB that contain book name,
     ```
     npm init
     ```
-    ![alt text](mean14.JPG)
+    ![alt text](/MEAN-STACK/Images/mean14.JPG)
 
     Add file named server.js to Books folder.
     
@@ -165,7 +165,7 @@ For this application, Book records were added to MongoDB that contain book name,
             });
     ```
 
-    ![alt text](mean15-1.JPG)
+    ![alt text](/MEAN-STACK/Images/mean15.JPG)
 
 
 ## Step 3: Install Express and set up routes to the server.
@@ -177,7 +177,7 @@ Express was used to pass book information to and from our MongoDB database. Mong
     ```
     sudo npm install express mongoose
     ```
-    ![alt text](mean16.JPG)
+    ![alt text](/MEAN-STACK/Images/mean16.JPG)
 
 2. In Books folder, create a folder named ‘apps’
 
@@ -243,7 +243,7 @@ Express was used to pass book information to and from our MongoDB database. Mong
         };
     ```
 
-    ![alt text](mean17-1.JPG)
+    ![alt text](/MEAN-STACK/Images/mean17.JPG)
 
 3. In the ‘apps’ folder, create a directory named models.
 
@@ -256,7 +256,7 @@ Express was used to pass book information to and from our MongoDB database. Mong
     vim book.js
     ```
 
-    ![alt text](mean18.JPG)
+    ![alt text](/MEAN-STACK/Images/mean18.JPG)
 
 
     Copy and paste the code below into book.js
@@ -281,7 +281,7 @@ Express was used to pass book information to and from our MongoDB database. Mong
 
     ```
 
-    ![alt text](mean19-1.JPG)
+    ![alt text](/MEAN-STACK/Images/mean19.JPG)
 
 ## Step 4 - Access the routes with AngularJS.
 
@@ -349,7 +349,7 @@ In this project, AngularJS was used to connect the web page with Express and per
     });  
     ```
 
-    ![alt text](mean20-1.JPG)
+    ![alt text](/MEAN-STACK/Images/mean20.JPG)
 
 2.  In ‘public’ folder, create a file named index.html
 
@@ -416,7 +416,7 @@ In this project, AngularJS was used to connect the web page with Express and per
 </html>
 ```
 
-![alt text](mean21.JPG)
+![alt text](/MEAN-STACK/Images/mean21.JPG)
 
 3. Change the directory back up to ‘Books’ and start the server.
 
@@ -428,7 +428,7 @@ In this project, AngularJS was used to connect the web page with Express and per
     node server.js
     ```
 
-    ![alt text](mean22.JPG)
+    ![alt text](/MEAN-STACK/Images/mean22.JPG)
 
     The server is now up and running, Connection to it is via port 3300. Note: ensure you adjust your inbound rule on your server and open port 3300.
 
@@ -437,13 +437,13 @@ In this project, AngularJS was used to connect the web page with Express and per
     ```
     http://54.237.134.94:3300
     ```
-    ![alt text](mean23.JPG)
+    ![alt text](/MEAN-STACK/Images/mean23.JPG)
 
     The output above shows our book register web application is up and running.
 
     You can add more books to the register.
 
-    ![alt text](image-10.png)
+    ![alt text](/MEAN-STACK/Images/mean24.JPG)
 
 ## Conclusion
 

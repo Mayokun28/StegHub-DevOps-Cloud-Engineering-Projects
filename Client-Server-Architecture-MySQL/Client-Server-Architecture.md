@@ -173,7 +173,7 @@ username = mayokun
 
 ### Manipulating the database
 
-I manipulated the database further. First, I created a new database and new table, inserted rows/records into table and selected all the records from the table.
+I manipulated the database further. First, I created a new database and new table, inserted rows/records into the table and selected all the records from the table.
 
 - Create a new database
 

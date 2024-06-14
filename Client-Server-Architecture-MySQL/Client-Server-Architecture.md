@@ -9,11 +9,11 @@
 
     MySQL Server
 
-    ![alt text](server1.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server1.JPG)
 
     MySQL Client
 
-    ![alt text](server2.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server2.JPG)
 
 ## Step 2 - On MySQL server Linux Server on EC2 instance, install MySQL Server software.
 
@@ -26,7 +26,7 @@
 
     ssh -i "sql-server-key.pem" ubuntu@34.239.130.146
     ```
-    ![alt text](server3.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server3.JPG)
 
 2. Update and upgrade Ubuntu
 
@@ -34,7 +34,7 @@
     sudo apt update && sudo apt upgrade -y
     ```
 
-    ![alt text](server4.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server4.JPG)
 
 3. Install MySQL Server software.
 
@@ -42,7 +42,7 @@
     sudo apt install mysql-server -y
     ```
 
-    ![alt text](server5.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server5.JPG)
 
 4. Enable mysql server
 
@@ -50,7 +50,7 @@
     sudo systemctl enable mysql
     ```
 
-    ![alt text](server6.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server6.JPG)
 
 ## Step 3 - On MySQL client Linux Server on EC2 instance, install MySQL on EC2 Client software.
 
@@ -60,7 +60,7 @@
     ssh -i "sql-server-key.pem" ubuntu@44.212.23.85
     ```
 
-    ![alt text](server7.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server7.JPG)
 
 2. Update and upgrade Ubuntu
 
@@ -68,7 +68,7 @@
     sudo apt update && sudo apt upgrade -y
     ```
 
-    ![alt text](server8.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server8.JPG)
 
 3. Install MySQL Client software
 
@@ -80,7 +80,7 @@
 
  By default, both of the EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses. Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default so it has to be opened by creating a new entry in inbound rules in mysql server Security Groups. For extra security, access to mysql server by all IP addresses was not allowed, only the specific local (private) IP address (172.31.86.62/32) of mysql client was allowed.
 
-![alt text](server9.JPG)
+![alt text](/Client-Server-Architecture-MySQL/Images/server9.JPG)
 
 ## Step 5 - Configure MySQL server to allow connections from remote hosts.
 
@@ -90,7 +90,7 @@
     sudo mysql_secure_installation
     ```
 
-    ![alt text](server10.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server10.JPG)
 
 
 2. Access MySQL shell.
@@ -99,7 +99,7 @@
     sudo mysql
     ```
 
-    ![alt text](server11.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server11.JPG)
 
   
 3. On mysql server, create a user named client and a 
@@ -110,7 +110,7 @@
         CREATE USER 'mayokun'@'%' IDENTIFIED BY 'Greatman28';
     ```
 
-    ![alt text](server12.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server12.JPG)
 
 
 - Grant all privileges
@@ -129,7 +129,7 @@
     ```
        exit 
        ```
-       ![alt text](server13.JPG)
+       ![alt text](/Client-Server-Architecture-MySQL/Images/server13.JPG)
 
 4. Now, configure MySQL server to allow connections from remote hosts.
 
@@ -140,9 +140,9 @@
 
     Replace ```127.0.0.1``` with ```0.0.0.0```
 
-    ![alt text](server15.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server15.JPG)
 
-    ![alt text](server14.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server14.JPG)
 
     Then save and close the file.
 
@@ -161,7 +161,7 @@ username = mayokun
 
  Then, enter your password you created earlier in the setup.
 
-![alt text](server16.JPG)
+![alt text](/Client-Server-Architecture-MySQL/Images/server16.JPG)
 
 ## Step 7 -Check that the connection to the remote MySQL server was successful and  you can perform SQL queries.
 
@@ -169,7 +169,7 @@ username = mayokun
     show databases;
 ```
 
-![alt text](server17.JPG)
+![alt text](/Client-Server-Architecture-MySQL/Images/server17.JPG)
 
 ### Manipulating the database
 
@@ -209,7 +209,7 @@ I manipulated the database further. First, I created a new database and new tabl
     SELECT * FROM favoritefood;
     ```
 
-    ![alt text](server18.JPG)
+    ![alt text](/Client-Server-Architecture-MySQL/Images/server18.JPG)
 
     At this point, this project is successfully completed. In this project, we set up a functional client-server architecture using MySQL Database Management System on AWS EC2 instances.
 

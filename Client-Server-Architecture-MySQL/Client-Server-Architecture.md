@@ -147,7 +147,7 @@
     Then save and close the file.
 
 
-## Step 6 - From MySQL client linux server, connect remotely to MySQL server database without using SSH 
+## Step 6 - From MySQL client linux server, connect remotely to MySQL server database without using SSH. 
 
 On the terminal tab for mysql client, we can connect remotely to the mysql server using the mysql utility. To do this, we can run the connection code below:
 
@@ -156,8 +156,7 @@ On the terminal tab for mysql client, we can connect remotely to the mysql serve
    sudo mysql -u username -h mysqlserveripaddress -p
 ```
 
-username = mayokun
- mysqlserver privateipaddress = 172.31.90.177
+username = mayokun and mysqlserver privateipaddress = 172.31.90.177
 
  Then, enter your password you created earlier in the setup.
 

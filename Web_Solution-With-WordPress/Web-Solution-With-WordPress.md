@@ -4,9 +4,9 @@
 
 1. Launch a RedHat (AMI) EC2 instance that serve as Web Server. Create 3 volumes in the same AZ as the web server EC2 each of 10GB and attach all 3 volumes one by one to the web server.
 
-    ![alt text](wordpress1.JPG)
+    ![alt text](Web_Solution-With-WordPress/Images/wordpress1.JPG)
 
-    ![alt text](wordpress2.JPG)
+    ![alt text](Web_Solution-With-WordPress/Images/wordpress2.JPG)
 
     ![alt text](wordpress3.JPG)
 
